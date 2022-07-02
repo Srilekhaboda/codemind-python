@@ -1,24 +1,11 @@
-def count(num):
-    c=0
-    while num:
-        d=num%10
-        num//=10
-        c+=1
-    return c    
-def fun(num):
-    p=0
-    h=num
-    while num:
-        d=num%10
-        num//=10
-        if d>0:
-            if h%d==0:
-                p+=1
-    return p
-n=int(input())
-m=int(input())
-for i in range(n,m+1):
-    c=count(i)
-    k=fun(i)
-    if k==c:
+x=int(input())
+y=int(input())
+for i in range(x,y+1):
+    temp=i
+    while temp!=0:
+        d=temp%10
+        if d==0 or i%d!=0:
+            break
+        temp=temp//10
+    if temp==0:
         print(i,end=' ')
